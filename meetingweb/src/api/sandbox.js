@@ -19,7 +19,6 @@ axios.defaults.baseURL = 'http://localhost:8081';
         params: obj.params
       }).then(function (response) {
         // 请求成功
-
         obj.success && obj.success(response.data)
       }).catch(function (error) {
         // 显示错误提示信息

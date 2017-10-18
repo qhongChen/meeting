@@ -8,22 +8,22 @@
       </el-col>
       <el-col :span="2">
         <div style="height: 80px; background: #20A0FF;line-height: 80px;">
-          <el-button size="small" @click="logout">退出系统&nbsp;<i class="el-icon-arrow-right"></i></el-button>
+          <el-button size="small">退出系统&nbsp;<i class="el-icon-arrow-right"></i></el-button>
         </div>
       </el-col>
     </el-row>
 
-    <el-row id="container">
-      <el-col :span="3">
+    <el-row id="container" :gutter="10">
+      <el-col :span="3" :offset="4">
         <div>
-          <el-menu mode="vertical"  router="true">
+          <el-menu mode="vertical" :router="true">
             <el-menu-item-group title="个人中心">
               <el-menu-item index="messageMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;最新通知</el-menu-item>
               <el-menu-item index="1-2" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;我的预定</el-menu-item>
               <el-menu-item index="myMeetingMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;我的会议</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="人员管理" >
-              <el-menu-item index="2-1" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;部门管理</el-menu-item>
+              <el-menu-item index="DepartementMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;部门管理</el-menu-item>
               <el-menu-item index="2-2" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;员工注册</el-menu-item>
               <el-menu-item index="2-3" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;搜索员工</el-menu-item>
             </el-menu-item-group>
@@ -36,7 +36,7 @@
           </el-menu>
         </div>
       </el-col>
-      <el-col id="main" :span="21">
+      <el-col id="main" :span="13">
         <div style="height: 550px">
           <router-view></router-view>
         </div>

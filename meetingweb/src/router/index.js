@@ -21,6 +21,11 @@ export default new Router({
           // 懒加载
           component: resolve => require(['../pages/MyMeeting/MyMeetingMain.vue'], resolve),
         },
+        {
+          path: 'DepartementMain',
+          // 懒加载
+          component: resolve => require(['../pages/Department/DepartementMain.vue'], resolve),
+        },
       ]
     }
   ]

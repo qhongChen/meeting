@@ -16,6 +16,12 @@
         sb.get(obj)
       }
     },
+    department: {
+      list: function (obj) {
+        obj.api = '/DepartmentController/list';
+        sb.get(obj)
+      }
+    },
     user: {
       login: function (obj) {
         obj.api = 'login';
