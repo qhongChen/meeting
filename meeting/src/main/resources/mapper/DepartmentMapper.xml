@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xin.qhongchen.meeting.mapper.DepartmentMapper">
+    <resultMap id="BaseResultMap" type="xin.qhongchen.meeting.entity.Department">
+        <id column="departrment_id" property="departrmentId" jdbcType="VARCHAR"/>
+        <result column="departrment_name" property="departrmentName" jdbcType="VARCHAR"/>
+        <result column="departrment_code" property="departrmentCode" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="create_user" property="createUser" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="save" parameterType="Department">
+
+        <selectKey keyProperty="departrmentId" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','')
+        </selectKey>
+
+        insert into department
+        (departrment_id,departrment_name,departrment_code,create_time,create_user)
+        values
+        (#{departrmentId},#{departrmentName},#{departrmentCode},#{createTime},#{createUser})
+    </insert>
+
+
+    <select id="list" resultType="map" >
+        select
+            departrment_id,departrment_name,departrment_code,
+            (select count(1) from user u where u.departrment_code = d.departrment_code) as hava_user from department d
+    </select>
+
+</mapper>

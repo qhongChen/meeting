@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xin.qhongchen.meeting.mapper.MeetingMapper" >
+  <resultMap id="BaseResultMap" type="xin.qhongchen.meeting.entity.Meeting" >
+
+    <id column="meeting_id" property="meetingId" jdbcType="VARCHAR" />
+    <result column="holder" property="holder" jdbcType="VARCHAR" />
+    <result column="hold_time" property="holdTime" jdbcType="TIMESTAMP" />
+    <result column="attend_number" property="attendNumber" jdbcType="INTEGER" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="meeting_name" property="meetingName" jdbcType="VARCHAR" />
+    <result column="meeting_remark" property="meetingRemark" jdbcType="VARCHAR" />
+    <result column="room_id" property="roomId" jdbcType="VARCHAR" />
+    <result column="is_cancel" property="isCancel" jdbcType="CHAR" />
+    <result column="cancel_reason" property="cancelReason" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  
+  <select id="list" resultMap="BaseResultMap">
+    select * from meeting
+  </select>
+
+</mapper>
