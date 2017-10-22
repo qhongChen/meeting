@@ -1,7 +1,7 @@
-/* eslint-disable no-undef */
 import axios from 'axios'
+import Qs from 'qs'
+
 axios.defaults.baseURL = 'http://localhost:8081';
-// axios.defaults.headers.post['content-Type'] = 'application/x-www-form-urlencoded';
 
 (function () {
   /**
@@ -14,7 +14,7 @@ axios.defaults.baseURL = 'http://localhost:8081';
      * get方法
      * 所有的get请求将调用该方法
      */
-    get (obj) {
+    get(obj) {
       axios.get(obj.api, {
         params: obj.params
       }).then(function (response) {
@@ -31,8 +31,13 @@ axios.defaults.baseURL = 'http://localhost:8081';
      * post方法
      * 所有的post请求将调用该方法
      */
-    post (obj) {
-      axios.post(obj.api, obj.data).then(function (response) {
+    post(obj) {
+      //后台统一用param接收参数
+      var data = {
+        param : JSON.stringify(obj.data)
+      }
+
+      axios.post(obj.api, Qs.stringify(data)).then(function (response) {
         // 请求成功
         obj.success && obj.success(response.data)
       }).catch(function (error) {
@@ -42,7 +47,7 @@ axios.defaults.baseURL = 'http://localhost:8081';
       })
     },
 
-    error (callback, err) {
+    error(callback, err) {
       if (callback) {
         // 如果传入了自定义的错误提示信息, 那么就调用自定义的错误提示信息
         callback(err)

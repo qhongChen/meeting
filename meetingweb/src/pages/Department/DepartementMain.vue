@@ -3,7 +3,7 @@
     <el-row :gutter="10" style="margin: 10px">
       <el-col :span="12">
         <el-row style="margin-bottom: 10px">
-          <el-button type="primary">新增</el-button>
+          <dept-save :departmentList="departmentList"></dept-save>
           <el-button type="primary">修改</el-button>
           <el-button type="danger">删除</el-button>
           <el-row>
@@ -34,18 +34,22 @@
 
 
 <script>
+  import save from "./DepartementSave.vue"
   export default {
+    components :{
+      "dept-save" : save
+    },
     name: 'main',
     data() {
       return {
+        departmentList: [],
         selections: [],
-        departmentList: []
       }
     },
     methods: {
       tableSelectChange(selection) {
         this.selections = selection;
-      },
+      }
     },
     mounted() {
       sandBox.APIs.department.list({

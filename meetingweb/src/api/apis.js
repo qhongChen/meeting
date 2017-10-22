@@ -20,6 +20,10 @@
       list: function (obj) {
         obj.api = '/DepartmentController/list';
         sb.get(obj)
+      },
+      save: function (obj) {
+        obj.api = '/DepartmentController/save';
+        sb.post(obj)
       }
     },
     user: {

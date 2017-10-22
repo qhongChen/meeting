@@ -7,13 +7,15 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import sb from './api/sandbox'
 import api from './api/apis'
+import tableUtils from './util/tableUtils'
 
-Vue.use(ElementUI)
-Vue.config.productionTip = false
+Vue.use(ElementUI);
+Vue.use(tableUtils);
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
-new Vue({
+var vm =new Vue({
   el: '#app',
   router,
   ...App
-})
+});
