@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <el-button type="primary" @click="dialogVisible = true">新增</el-button>
+    <el-button size="small" type="primary" @click="dialogVisible = true" icon="plus"></el-button>
 
     <el-dialog title="部门管理 > 新增部门" :visible.sync="dialogVisible" size="tiny">
       <el-form ref="myform" :model="departmentInfo" label-width="80px">
@@ -43,10 +43,11 @@
         sandBox.APIs.department.save({
           data:this.departmentInfo,
           success: function (result) {
-            console.log(result);
-          }
+            mtg.success(result.message);
+            this.$emit('list');
+            this.dialogVisible = false;
+          }.bind(this)
         })
-
       }
     }
   }

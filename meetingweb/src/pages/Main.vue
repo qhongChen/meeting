@@ -18,12 +18,12 @@
         <div>
           <el-menu mode="vertical" :router="true">
             <el-menu-item-group title="个人中心">
-              <el-menu-item index="messageMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;最新通知</el-menu-item>
+              <el-menu-item index="/main/mainmessageMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;最新通知</el-menu-item>
               <el-menu-item index="1-2" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;我的预定</el-menu-item>
-              <el-menu-item index="myMeetingMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;我的会议</el-menu-item>
+              <el-menu-item index="/main/myMeetingMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;我的会议</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="人员管理" >
-              <el-menu-item index="DepartementMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;部门管理</el-menu-item>
+              <el-menu-item index="/main/DepartementMain" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;部门管理</el-menu-item>
               <el-menu-item index="2-2" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;员工注册</el-menu-item>
               <el-menu-item index="2-3" style="font-size: 14px;height: 40px;line-height: 40px">&nbsp;&nbsp;&nbsp;&nbsp;搜索员工</el-menu-item>
             </el-menu-item-group>

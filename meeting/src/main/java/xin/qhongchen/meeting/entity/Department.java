@@ -9,6 +9,8 @@ public class Department {
 
     private String departrmentCode;
 
+    private String pid;
+
     private Date createTime;
 
     private String createUser;
@@ -35,6 +37,14 @@ public class Department {
 
     public void setDepartrmentCode(String departrmentCode) {
         this.departrmentCode = departrmentCode == null ? null : departrmentCode.trim();
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
     }
 
     public Date getCreateTime() {

@@ -7,10 +7,9 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import sb from './api/sandbox'
 import api from './api/apis'
-import tableUtils from './util/tableUtils'
+import mtg from './util/common'
 
 Vue.use(ElementUI);
-Vue.use(tableUtils);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

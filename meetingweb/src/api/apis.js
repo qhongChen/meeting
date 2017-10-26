@@ -24,19 +24,17 @@
       save: function (obj) {
         obj.api = '/DepartmentController/save';
         sb.post(obj)
-      }
+      },
+      delete: function (obj) {
+        obj.api = '/DepartmentController/delete';
+        sb.post(obj)
+      },
     },
     user: {
       login: function (obj) {
-        obj.api = 'login';
+        obj.api = '/UserController/login';
         sb.post(obj)
       },
-
-      list: function (obj) {
-        obj.api = '/user/getListByPower';
-        sb.get(obj)
-      }
-
     }
   }
 }(window.sandBox))

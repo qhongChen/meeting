@@ -15,8 +15,13 @@
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 
-    <select id="queryUserList" resultMap="BaseResultMap">
+    <select id="queryUserList" parameterType="User" resultType="Map">
         SELECT  * FROM  user
+        <where>
+            <if test="userAccount != null">
+                and user_account = #{userAccount}
+            </if>
+        </where>
     </select>
 
 </mapper>

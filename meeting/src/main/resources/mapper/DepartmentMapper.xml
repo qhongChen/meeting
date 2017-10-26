@@ -22,10 +22,34 @@
     </insert>
 
 
-    <select id="list" resultType="map" >
-        select
-            departrment_id,departrment_name,departrment_code,
-            (select count(1) from user u where u.departrment_code = d.departrment_code) as hava_user from department d
+    <select id="list" resultType="map">
+        SELECT
+            departrment_id  AS id,
+            departrment_name,
+            departrment_code,
+            (SELECT count(1)
+             FROM user u
+             WHERE u.departrment_code = d.departrment_code) AS hava_user
+        FROM department d
+    </select>
+
+    <select id="getPdeptInfo" parameterType="String" resultType="Map">
+        SELECT
+            departrment_id,
+            count(1) AS count
+        FROM department
+        WHERE departrment_code LIKE #{pcode}
+    </select>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM department
+        WHERE departrment_id = #{id}
+    </delete>
+
+    <select id="get" parameterType="String" resultMap="BaseResultMap">
+        SELECT *
+        FROM department
+        WHERE departrment_id = #{id}
     </select>
 
 </mapper>
